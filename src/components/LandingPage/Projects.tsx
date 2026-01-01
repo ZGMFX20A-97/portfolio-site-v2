@@ -56,7 +56,7 @@ const Projects = () => {
     <section className="py-24 pl-0 pr-6 bg-neu-card border-b-3 border-neu-border w-full overflow-hidden">
       <div className="w-full max-w-[1600px] mx-auto flex flex-col md:flex-row items-center justify-between gap-12 md:gap-0">
         <div className="w-full md:w-auto flex-shrink-0 flex justify-center md:justify-start -ml-4 md:-ml-8 mb-12 md:mb-0">
-          <h2 className="text-5xl md:text-7xl font-black text-center md:text-left mb-0 bg-neu-bg border-3 border-neu-border border-l-0 inline-block py-4 pr-8 pl-8 shadow-neu-lg rotate-2 text-neu-text leading-tight whitespace-nowrap rounded-r-xl">
+          <h2 className="text-4xl sm:text-5xl md:text-7xl font-black text-center md:text-left mb-0 bg-neu-bg border-3 border-neu-border border-l-0 inline-block py-4 pr-8 pl-8 shadow-neu-lg rotate-2 text-neu-text leading-tight whitespace-normal md:whitespace-nowrap rounded-r-xl break-words max-w-[95vw] md:max-w-none">
             HACK-PROJECTS
           </h2>
         </div>
