@@ -1,89 +1,23 @@
 @import "tailwindcss";
 
-@theme {
-  --color-neu-yellow: #ffe600;
-  /* Neon Yellow */
-  --color-neu-pink: #ff2e93;
-  /* Neon Pink */
-  --color-neu-blue: #00a3ff;
-  /* Neon Blue */
-  --color-neu-lime: #ccff00;
-  /* Neon Lime */
-  --color-neu-purple: #bd00ff;
-  /* Neon Purple */
-
-  --color-neu-bg: #050505;
-  /* Almost Black */
-  --color-neu-card: #141414;
-  /* Dark Gray Surface */
-  --color-neu-text: #ededed;
-  /* Off-white Text */
-  --color-neu-border: #333333;
-  /* Dark Gray Border */
-  --color-neu-border-light: #555555;
-  /* Lighter Border for hover */
-
-  /* Shadows - Dark Gray for subtle depth on dark */
-  --shadow-neu: 4px 4px 0px 0px #333333;
-  --shadow-neu-sm: 2px 2px 0px 0px #333333;
-  --shadow-neu-lg: 6px 6px 0px 0px #333333;
-
-  --border-width-3: 3px;
-
-  --animate-marquee: marquee 25s linear infinite;
-
-  @keyframes marquee {
-    0% {
-      transform: translateX(0%);
-    }
-
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-}
-
-@utility text-stroke-2 {
-  -webkit-text-stroke: 2px #333333;
-}
-
-@utility text-stroke-3 {
-  -webkit-text-stroke: 3px #333333;
-}
-
-@utility text-stroke-white {
-  -webkit-text-stroke: 2px white;
-}
-
+/**
+ * サイト全体のベース。ビジュアルは 3D ポートフォリオ側の
+ * components/NeuralSpace/neuralSpace.css に閉じている。
+ */
 @layer base {
+  html,
   body {
-    @apply bg-neu-bg text-neu-text overflow-x-hidden font-sans;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background: #030712;
+    color: #e8f1fb;
   }
 
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6 {
-    @apply font-black tracking-tight;
+  #root {
+    width: 100%;
+    height: 100%;
   }
-}
-
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #050505;
-  border-left: 3px solid #333333;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #333333;
-  border: 2px solid #050505;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #555555;
 }
