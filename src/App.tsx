@@ -1,58 +1,22 @@
 import {
   BrowserRouter as Router,
+  Navigate,
   Route,
   Routes,
-  useLocation,
 } from "react-router-dom";
-import { AnimatePresence } from "framer-motion";
-import LandingPage from "./pages/LandingPage";
-import AboutMePage from "./pages/AboutMePage";
-import NotFoundPage from "./pages/NotFoundPage";
-import PageTransition from "./components/PageTransition";
-import GlobalClickEffect from "./components/GlobalClickEffect";
+import NeuralSpacePage from "./pages/NeuralSpacePage";
 
-const AnimatedRoutes = () => {
-  const location = useLocation();
-
-  return (
-    <>
-      <GlobalClickEffect />
-      <AnimatePresence mode="wait">
-        <Routes location={location} key={location.pathname}>
-          <Route
-            path="/"
-            element={
-              <PageTransition>
-                <LandingPage />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="/about"
-            element={
-              <PageTransition>
-                <AboutMePage />
-              </PageTransition>
-            }
-          />
-          <Route
-            path="*"
-            element={
-              <PageTransition>
-                <NotFoundPage />
-              </PageTransition>
-            }
-          />
-        </Routes>
-      </AnimatePresence>
-    </>
-  );
-};
-
+/**
+ * ルートは 1 枚のみ。未知のパスはトップへ戻す（GitHub Pages の
+ * 404.html フォールバックから来たディープリンクもここで拾われる）。
+ */
 function App() {
   return (
     <Router basename={import.meta.env.BASE_URL}>
-      <AnimatedRoutes />
+      <Routes>
+        <Route path="/" element={<NeuralSpacePage />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
     </Router>
   );
 }
